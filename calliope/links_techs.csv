@@ -1,0 +1,3 @@
+techs,color,name,base_tech,flow_cap_max,flow_out_eff_per_distance,lifetime,link_to,link_from
+X1_to_X2,#823739,power_line,transmission,10000,0.99,20,X2,X1
+X1_to_X3,#823739,power_line,transmission,10000,0.99,20,X3,X1
