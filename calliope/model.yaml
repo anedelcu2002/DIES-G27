@@ -5,12 +5,12 @@ config:
     # What version of Calliope this model is intended for
     calliope_version: 0.7.0
     subset:
-      timesteps: ["2005-07-01", "2005-07-02"] # Subset of timesteps
+      timesteps: ["2024-04-01", "2024-04-08"] # Subset of timesteps
     broadcast_input_data: true  # allow single indexed parameter data entries to be broadcast across all index items, if there are multiple entries.
     mode: base # Choices: base, operate, spores
 
   build:
-    ensure_feasibility: true # Switching on unmet demand
+    ensure_feasibility: false # Switching on unmet demand
 
   solve:
     solver: gurobi
@@ -39,10 +39,10 @@ techs:
     base_tech: supply
     carrier_out: electricity
     source_use_max: .inf
-    flow_cap_max: 2000
+    flow_cap_max: 50000
     lifetime: 25
     cost_flow_cap:
-      data: 15
+      data: 150
       index: monetary
       dims: costs
     cost_source_use:
@@ -62,10 +62,10 @@ techs:
     carrier_export: electricity
     source_unit: per_cap
     flow_out_parasitic_eff: 0.85 # inverter losses
-    flow_cap_max: 250
+    flow_cap_max: 1000
     lifetime: 25
     cost_flow_cap:
-      data: 1
+      data: 0.01
       index: monetary
       dims: costs
 
@@ -77,7 +77,7 @@ techs:
     carrier_export: electricity
     source_unit: per_cap
     flow_out_parasitic_eff: 0.95 # power electronics losses
-    flow_cap_max: 300
+    flow_cap_max: 20000
     lifetime: 25
     cost_flow_cap:
       data: 1
@@ -90,9 +90,8 @@ techs:
     base_tech: storage
     carrier_in: electricity
     carrier_out: electricity
-    flow_cap_max: 1000 # kW
-    storage_cap_max: .inf
-    flow_cap_per_storage_cap_max: 4
+    flow_cap_max: 5000 # kW
+    storage_cap_max: 1000000 # kWh
     # 0.95 * 0.95 = 0.9025 round trip efficiency
     flow_out_eff: 0.95
     flow_in_eff: 0.95
@@ -115,19 +114,27 @@ techs:
 
 
 nodes:
+  X0:
+    techs:
+      supply_grid_power:
   X1:
     techs:
-      pv:
-      supply_grid_power:
       demand_electricity:
   X2:
     techs:
-      pv:
       demand_electricity:
+      pv:
+      battery:
   X3:
     techs:
-      pv:
       demand_electricity:
+      pv:
+      battery:
+  X4:
+    techs:
+      demand_electricity:
+      pv:
+      battery:
 
 
 # --8<-- [start:data-tables]
@@ -145,8 +152,14 @@ data_tables:
     add_dims:
       parameters: source_use_equals
       techs: pv
-    select:
-      scaler: per_area
+    drop: [comment, scaler]
+  wind_resource:
+    data: wind_resource.csv
+    rows: [timesteps]
+    columns: [comment, scaler]
+    add_dims:
+      parameters: source_use_equals
+      techs: wind
     drop: [comment, scaler]
   links_costs:
     data: links_costs.csv
