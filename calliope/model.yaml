@@ -69,6 +69,36 @@ techs:
       index: monetary
       dims: costs
 
+  wind:
+    name: "Wind power"
+    color: "#A7568D"
+    base_tech: supply
+    carrier_out: electricity
+    carrier_export: electricity
+    source_unit: per_cap
+    flow_out_parasitic_eff: 0.95 # power electronics losses
+    flow_cap_max: 300
+    lifetime: 25
+    cost_flow_cap:
+      data: 1
+      index: monetary
+      dims: costs
+
+  battery:
+    name: "Battery storage"
+    color: "#3B61E3"
+    base_tech: storage
+    carrier_in: electricity
+    carrier_out: electricity
+    flow_cap_max: 1000 # kW
+    storage_cap_max: .inf
+    flow_cap_per_storage_cap_max: 4
+    # 0.95 * 0.95 = 0.9025 round trip efficiency
+    flow_out_eff: 0.95
+    flow_in_eff: 0.95
+    storage_loss: 0 # No loss over time assumed
+    lifetime: 25
+
   # --8<-- [end:pv]
 
   # Conversion
