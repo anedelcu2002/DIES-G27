@@ -1,0 +1,13 @@
+nodes,techs,capacity_kw,carriers,name,base_tech,distance_m
+X0,supply_grid_power,50000.0,electricity,National grid import,supply,
+X0,X0_to_X1,1071.6930953867802,electricity,power_line,transmission,602.782956422898
+X0,X0_to_X2,5026.036518054143,electricity,power_line,transmission,516.7780027584732
+X0,X0_to_X3,8055.131778363852,electricity,power_line,transmission,683.343794386333
+X0,X0_to_X4,12111.07916975254,electricity,power_line,transmission,916.7870483008802
+X1,X0_to_X1,1071.6930953867802,electricity,power_line,transmission,602.782956422898
+X2,battery,5000.0,electricity,Battery storage,storage,
+X2,X0_to_X2,5026.036518054143,electricity,power_line,transmission,516.7780027584732
+X3,battery,5000.0,electricity,Battery storage,storage,
+X3,X0_to_X3,8055.131778363852,electricity,power_line,transmission,683.343794386333
+X4,battery,5000.0,electricity,Battery storage,storage,
+X4,X0_to_X4,12111.07916975254,electricity,power_line,transmission,916.7870483008802
