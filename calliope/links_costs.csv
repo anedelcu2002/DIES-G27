@@ -1,5 +1,6 @@
 techs,cost_flow_cap_per_distance
-X0_to_X1,1000000
-X0_to_X2,1000000
-X0_to_X3,1000000
-X0_to_X4,1000000
+HV_station_to_transmission_node,100000000
+transmission_node_to_residential_demand,100000000
+HV_station_to_data_center_1,100000000
+HV_station_to_data_center_2,100000000
+HV_station_to_data_center_3,100000000

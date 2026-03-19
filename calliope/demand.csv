@@ -1,5 +1,5 @@
 techs,demand_electricity,demand_electricity,demand_electricity,demand_electricity
-nodes,X1,X2,X3,X4
+nodes,residential_demand,data_center_1,data_center_2,data_center_3
 2024-01-01 00:00,542.00892351,5000.0,8000.0,12000.0
 2024-01-01 01:00,553.74573933,5000.0,8000.0,12000.0
 2024-01-01 02:00,550.95125934,5000.0,8000.0,12000.0

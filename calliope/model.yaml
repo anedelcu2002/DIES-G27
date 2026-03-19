@@ -5,9 +5,9 @@ config:
     # What version of Calliope this model is intended for
     calliope_version: 0.7.0
     subset:
-      timesteps: ["2024-04-01", "2024-04-07"] # Subset of timesteps
+      timesteps: ["2024-04-01", "2024-04-02"] # Subset of timesteps
     broadcast_input_data: true  # allow single indexed parameter data entries to be broadcast across all index items, if there are multiple entries.
-    mode: operate # Choices: base, operate, spores
+    mode: base # Choices: base, operate, spores
 
   build:
     ensure_feasibility: false # Switching on unmet demand
@@ -126,27 +126,29 @@ techs:
 
 
 nodes:
-  X0:
+  HV_station:
     techs:
       supply_grid_power:
-  X1:
+  residential_demand:
     techs:
       demand_electricity:
-  X2:
-    techs:
-      demand_electricity:
-      pv:
-      battery:
-  X3:
+  data_center_1:
     techs:
       demand_electricity:
       pv:
       battery:
-  X4:
+  data_center_2:
     techs:
       demand_electricity:
       pv:
       battery:
+  data_center_3:
+    techs:
+      demand_electricity:
+      pv:
+      battery:
+  transmission_node:
+    techs:
 
 
 # --8<-- [start:data-tables]
