@@ -1,6 +1,12 @@
 techs,color,name,base_tech,flow_cap_max,flow_out_eff_per_distance,lifetime,link_to,link_from
-HV_station_to_transmission_node,#823739,power_line,transmission,100000,0.99,20,transmission_node,HV_station
-transmission_node_to_residential_demand,#823739,power_line,transmission,100000,0.99,20,residential_demand,transmission_node
-HV_station_to_data_center_1,#823739,power_line,transmission,5500,0.99,20,data_center_1,HV_station
-HV_station_to_data_center_2,#823739,power_line,transmission,8800,0.99,20,data_center_2,HV_station
-HV_station_to_data_center_3,#823739,power_line,transmission,13200,0.99,20,data_center_3,HV_station
+HV_station_to_transmission_1,#823739,power_line,transmission,100000,0.99,20,transmission_1,HV_station
+transmission_1_to_transmission_2,#823739,power_line,transmission,100000,0.99,20,transmission_2,transmission_1
+transmission_1_to_transmission_3,#823739,power_line,transmission,100000,0.99,20,transmission_3,transmission_1
+transmission_3_to_transmission_4,#823739,power_line,transmission,100000,0.99,20,transmission_4,transmission_3
+transmission_3_to_transmission_5,#823739,power_line,transmission,100000,0.99,20,transmission_5,transmission_3
+transmission_5_to_transmission_6,#823739,power_line,transmission,100000,0.99,20,transmission_6,transmission_5
+transmission_6_to_transmission_7,#823739,power_line,transmission,100000,0.99,20,transmission_7,transmission_6
+transmission_4_to_data_center_1,#823739,power_line,transmission,100000,0.99,20,data_center_1,transmission_4
+transmission_3_to_data_center_2,#823739,power_line,transmission,100000,0.99,20,data_center_2,transmission_3
+transmission_2_to_data_center_3,#823739,power_line,transmission,100000,0.99,20,data_center_3,transmission_2
+transmission_7_to_residential_demand,#823739,power_line,transmission,100000,0.99,20,residential_demand,transmission_7

@@ -10,7 +10,7 @@ config:
     mode: base # Choices: base, operate, spores
 
   build:
-    ensure_feasibility: false # Switching on unmet demand
+    ensure_feasibility: true # Switching on unmet demand
     operate:
           window: 12h
           horizon: 24h
@@ -147,7 +147,19 @@ nodes:
       demand_electricity:
       pv:
       battery:
-  transmission_node:
+  transmission_1:
+    techs:
+  transmission_2:
+    techs:
+  transmission_3:
+    techs:
+  transmission_4:
+    techs:
+  transmission_5:
+    techs:
+  transmission_6:
+    techs:
+  transmission_7:
     techs:
 
 
