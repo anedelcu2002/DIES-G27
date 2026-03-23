@@ -1,13 +1,19 @@
-nodes,techs,capacity_kw,carriers,name,base_tech,distance_m
-X0,supply_grid_power,50000.0,electricity,National grid import,supply,
-X0,X0_to_X1,1071.6930953867802,electricity,power_line,transmission,602.782956422898
-X0,X0_to_X2,5026.036518054143,electricity,power_line,transmission,516.7780027584732
-X0,X0_to_X3,8055.131778363852,electricity,power_line,transmission,683.343794386333
-X0,X0_to_X4,12111.07916975254,electricity,power_line,transmission,916.7870483008802
-X1,X0_to_X1,1071.6930953867802,electricity,power_line,transmission,602.782956422898
-X2,battery,5000.0,electricity,Battery storage,storage,
-X2,X0_to_X2,5026.036518054143,electricity,power_line,transmission,516.7780027584732
-X3,battery,5000.0,electricity,Battery storage,storage,
-X3,X0_to_X3,8055.131778363852,electricity,power_line,transmission,683.343794386333
-X4,battery,5000.0,electricity,Battery storage,storage,
-X4,X0_to_X4,12111.07916975254,electricity,power_line,transmission,916.7870483008802
+nodes,technology,carriers,capacity_kw,distance_m
+,HV_station_to_transmission_1,,25669.40433028063,55.690672870643965
+data_center_1,battery,electricity,2007.5661249999996,
+data_center_3,battery,electricity,1338.9820666060928,
+data_center_2,battery,electricity,672.779272117166,
+data_center_1,pv,electricity,1000.0,
+data_center_2,pv,electricity,1000.0,
+data_center_3,pv,electricity,1000.0,
+HV_station,supply_grid_power,electricity,25669.40433028063,
+,transmission_1_to_transmission_2,,12007.33070218316,29.00640234804134
+,transmission_1_to_transmission_3,,13716.227751656259,130.57960620328663
+,transmission_2_to_data_center_3,,12003.826574819135,31.631976438225163
+,transmission_3_to_data_center_2,,8019.414411339074,240.44349705329026
+,transmission_3_to_transmission_4,,5029.637671586976,352.70487749391947
+,transmission_3_to_transmission_5,,1069.5578032205246,589.1759885025078
+,transmission_4_to_data_center_1,,5011.788014792002,233.65068939198443
+,transmission_5_to_transmission_6,,1063.2301343283675,303.759925239627
+,transmission_6_to_transmission_7,,1059.982411441279,640.0208069082363
+,transmission_7_to_residential_demand,,100000.0,547.1773663775728
