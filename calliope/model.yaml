@@ -5,7 +5,7 @@ config:
     # What version of Calliope this model is intended for
     calliope_version: 0.7.0
     subset:
-      timesteps: ["2024-04-01", "2024-04-02"] # Subset of timesteps
+      timesteps: ["2024-09-01", "2024-09-14"] # Subset of timesteps
     broadcast_input_data: true  # allow single indexed parameter data entries to be broadcast across all index items, if there are multiple entries.
     mode: base # Choices: base, operate, spores
 
@@ -66,7 +66,7 @@ techs:
     carrier_export: electricity
     source_unit: per_cap
     flow_out_parasitic_eff: 0.85 # inverter losses
-    flow_cap_max: 1000
+    flow_cap_max: 0 # 1000 kW
     flow_cap: 0
     lifetime: 25
     cost_flow_cap:
@@ -95,18 +95,18 @@ techs:
     base_tech: storage
     carrier_in: electricity
     carrier_out: electricity
-    flow_cap_max: 50000 # kW
-    flow_cap: 15000
-    storage_cap_max: 10000000 # kWh
-    storage_cap: 500000
+    flow_cap_per_storage_cap_max: 0.25
+    # flow_cap: 15000
+    storage_cap_max: 4000 # 4000 kWh
+    # storage_cap: 500000
     # 0.95 * 0.95 = 0.9025 round trip efficiency
     flow_out_eff: 0.95
     flow_in_eff: 0.95
     storage_loss: 0 # No loss over time assumed
     lifetime: 25
-    cyclic_storage: false
-    cost_flow_cap:
-      data: 0.1
+    cyclic_storage: true
+    cost_storage_cap:
+      data: 0.01
       index: monetary
       dims: costs
 
@@ -132,21 +132,19 @@ nodes:
   residential_demand:
     techs:
       demand_electricity:
+      battery:
   data_center_1:
     techs:
       demand_electricity:
       pv:
-      battery:
   data_center_2:
     techs:
       demand_electricity:
       pv:
-      battery:
   data_center_3:
     techs:
       demand_electricity:
       pv:
-      battery:
   transmission_1:
     techs:
   transmission_2:
