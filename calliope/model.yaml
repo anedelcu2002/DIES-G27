@@ -66,7 +66,7 @@ techs:
     carrier_export: electricity
     source_unit: per_cap
     flow_out_parasitic_eff: 0.85 # inverter losses
-    flow_cap_max: 0 # 1000 kW
+    flow_cap_max: 1000 # 1000 kW
     flow_cap: 0
     lifetime: 25
     cost_flow_cap:
@@ -132,21 +132,16 @@ nodes:
   residential_demand:
     techs:
       demand_electricity:
+      battery:
   data_center_1:
     techs:
       demand_electricity:
-      pv:
-      battery:
   data_center_2:
     techs:
       demand_electricity:
-      pv:
-      battery:
   data_center_3:
     techs:
       demand_electricity:
-      pv:
-      battery:
   transmission_1:
     techs:
   transmission_2:
