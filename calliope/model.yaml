@@ -132,19 +132,21 @@ nodes:
   residential_demand:
     techs:
       demand_electricity:
-      battery:
   data_center_1:
     techs:
       demand_electricity:
       pv:
+      battery:
   data_center_2:
     techs:
       demand_electricity:
       pv:
+      battery:
   data_center_3:
     techs:
       demand_electricity:
       pv:
+      battery:
   transmission_1:
     techs:
   transmission_2:
